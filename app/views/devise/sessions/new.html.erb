@@ -1,0 +1,27 @@
+<h2>Log in</h2>
+
+
+<%= form_with(
+  model: resource,
+  scope: resource_name,
+  url: session_path(resource_name),
+  data: {
+    controller: "devise",
+    action: "ajax:response:error->devise#loginFailed"
+  }) do |f| %>
+
+  <%= f.label :email %><br />
+  <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+
+  <%= f.label :password %><br />
+  <%= f.password_field :password, autocomplete: "current-password" %>
+
+  <fieldset>
+    <%= f.label :remember_me %>
+    <%= f.check_box :remember_me %>
+  </fieldset>
+
+  <section class="d-none" data-devise-target="errors"></section>
+
+  <%= f.submit "Log in" %>
+<% end %>

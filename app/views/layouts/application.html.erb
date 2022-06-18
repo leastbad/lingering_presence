@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Lingering Presence</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+  </head>
+
+  <body>
+    <header class="container">
+      <nav>
+        <ul>
+          <li><strong><%= link_to "Lingering Presence", root_path %></strong></li>
+        </ul>
+        <ul>
+          <% if user_signed_in? %>
+            <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to "Sign in", new_user_session_path %></li>
+            <li><%= link_to "Sign up", new_user_registration_path %></li>
+          <% end %>
+        </ul>
+      </nav>
+    </header>
+    <main class="container">
+      <% if notice %><section><%= notice %></section><% end %>
+      <%= yield %>
+    </main>
+    <footer class="container">
+      &copy; 2022 leastbad
+    </footer>
+  </body>
+</html>

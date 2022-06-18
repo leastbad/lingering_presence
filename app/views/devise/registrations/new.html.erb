@@ -1,0 +1,31 @@
+<h2>Sign up</h2>
+
+<%= form_with(
+  model: resource,
+  scope: resource_name,
+  url: registration_path(resource_name)
+  ) do |f| %>
+
+  <% if resource.errors.any? %>
+    <section>
+      <h3><%= I18n.t("errors.messages.not_saved", count: resource.errors.count, resource: resource.class.model_name.human.downcase) %></h3>
+      <ul>
+        <% resource.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </section>
+  <% end %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+
+  <%= f.label :password %>
+  <% if @minimum_password_length %><em>(<%= @minimum_password_length %> characters minimum)</em><% end %>
+  <%= f.password_field :password, autocomplete: "new-password" %>
+
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+
+  <%= f.submit "Sign up" %>
+<% end %>

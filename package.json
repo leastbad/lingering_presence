@@ -1,0 +1,23 @@
+{
+  "name": "lingering-presence",
+  "private": "true",
+  "dependencies": {
+    "@hotwired/stimulus": "^3.0.1",
+    "@hotwired/turbo": "^7.1.0",
+    "@rails/actioncable": "7.0.2-3",
+    "esbuild": "^0.14.36",
+    "esbuild-rails": "^1.0.3",
+    "mrujs": "^0.10.1",
+    "stimulus_reflex": "https://github.com/stimulusreflex/dev-builds/archive/refs/tags/stimulus_reflex/9d5945f.tar.gz"
+  },
+  "scripts": {
+    "build": "node esbuild.config.js",
+    "build:default": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds"
+  },
+  "resolutions": {
+    "stimulus_reflex/cable_ready": "https://github.com/cableready/dev-builds/archive/refs/tags/cable_ready/ebc9c3d.tar.gz"
+  },
+  "devDependencies": {
+    "chokidar": "^3.5.3"
+  }
+}

@@ -1,0 +1,60 @@
+Arguments: 
+  /home/leastbad/.nvm/versions/node/v16.13.1/bin/node /home/leastbad/.yarn/bin/yarn.js
+
+PATH: 
+  /home/leastbad/.rvm/gems/ruby-3.1.0/bin:/home/leastbad/.rvm/gems/ruby-3.1.0@global/bin:/home/leastbad/.rvm/rubies/ruby-3.1.0/bin:/home/leastbad/.rvm/bin:/home/leastbad/.local/bin:/home/leastbad/.yarn/bin:/home/leastbad/.config/yarn/global/node_modules/.bin:/home/leastbad/.nvm/versions/node/v16.13.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/WindowsApps/Microsoft.WindowsTerminal_1.13.11432.0_x64__8wekyb3d8bbwe:/mnt/c/ProgramData/Anaconda3:/mnt/c/ProgramData/Anaconda3/Library/mingw-w64/bin:/mnt/c/ProgramData/Anaconda3/Library/usr/bin:/mnt/c/ProgramData/Anaconda3/Library/bin:/mnt/c/ProgramData/Anaconda3/Scripts:/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/bin:/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/libnvvp:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0:/mnt/c/WINDOWS/System32/OpenSSH:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/NVIDIA Corporation/Nsight Compute 2022.1.1:/mnt/c/Program Files/usbipd-win:/mnt/c/Program Files/dotnet:/mnt/c/Users/leastbad/AppData/Local/Programs/Python/Python310/Scripts:/mnt/c/Users/leastbad/AppData/Local/Programs/Python/Python310:/mnt/c/Users/leastbad/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/leastbad/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Program Files/CMake/bin:/mnt/c/Program Files/COLMAP-3.7-windows-cuda:/mnt/c/Program Files/ffmpeg-n4.4-latest-win64-lgpl-4.4/bin:/snap/bin:/home/leastbad/.local/bin:/home/leastbad/.cargo/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.13.1
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://github.com/stimulusreflex/dev-builds/archive/cable_ready/9d5945f.tar.gz: Request failed "404 Not Found"
+      at ResponseError.ExtendableBuiltin (/home/leastbad/.yarn/lib/cli.js:696:66)
+      at new ResponseError (/home/leastbad/.yarn/lib/cli.js:802:124)
+      at Request.<anonymous> (/home/leastbad/.yarn/lib/cli.js:66215:16)
+      at Request.emit (node:events:390:28)
+      at Request.module.exports.Request.onRequestResponse (/home/leastbad/.yarn/lib/cli.js:141767:10)
+      at ClientRequest.emit (node:events:390:28)
+      at HTTPParser.parserOnIncomingClient (node:_http_client:623:27)
+      at HTTPParser.parserOnHeadersComplete (node:_http_common:128:17)
+      at TLSSocket.socketOnData (node:_http_client:487:22)
+      at TLSSocket.emit (node:events:390:28)
+
+npm manifest: 
+  {
+    "name": "lingering-presence",
+    "private": "true",
+    "dependencies": {
+      "@hotwired/stimulus": "^3.0.1",
+      "@hotwired/turbo": "^7.1.0",
+      "@rails/actioncable": "7.0.2-3",
+      "cable_ready": "5.0.0-pre9",
+      "esbuild": "^0.14.36",
+      "esbuild-rails": "^1.0.3",
+      "mrujs": "^0.10.1",
+      "stimulus_reflex": "3.5.0-pre9"
+    },
+    "scripts": {
+      "build": "node esbuild.config.js",
+      "build:default": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds"
+    },
+    "resolutions": {
+      "cable_ready": "https://github.com/cableready/dev-builds/archive/cable_ready/ebc9c3d.tar.gz",
+      "stimulus_reflex": "https://github.com/stimulusreflex/dev-builds/archive/cable_ready/9d5945f.tar.gz"
+    },
+    "devDependencies": {
+      "chokidar": "^3.5.3"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
